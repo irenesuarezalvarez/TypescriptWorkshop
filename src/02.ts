@@ -1,4 +1,4 @@
-// Objectives: 
+ // Objectives: 
 // Convert existing JavaScript functions to TypeScript
 // Understand functions as types
 // Convert specifically-typed functions to more
@@ -10,12 +10,14 @@ export default () => {
     // Add explicit parameter types and return type
     // Fix any errors resulting from invalid types
 
-    function add(x, y) {
+    function add(x: number, y: number):number {
         return x + y;
     }
 
-    function sum(numbers) {
-        return numbers.reduce(add, 0);
+    function sum(numbers: (number|string) []) {
+        return numbers
+            .map((number)=> Number(number))
+            .reduce(add, 0);
     }
 
     const someSum = sum([1, 2, '3']);
@@ -29,7 +31,7 @@ export default () => {
 
     const bankAccount = {
         money: 0,
-        deposit(value, message) {
+        deposit(value: number, message?: string) {
         this.money += value;
         if (message) {
             console.log(message);
@@ -47,10 +49,10 @@ export default () => {
     // Add explicit parameter types and return types
     // Addign a default greeting: "Hello!"
 
-    function greet(greeting) {
+    function greet(greeting: string = "Hello!") {
         return greeting;
     }
-
+    
     const defaultGreeting = greet();
     const portugueseGreeting = greet('Oi como vai!');
 
@@ -61,7 +63,7 @@ export default () => {
     // Add parameter type annotation
     // Even though this function doesn't return, add an explicit return type
 
-    function logMessage(message) {
+    function logMessage(message: string): any {
         console.log(message);
     }
 
@@ -76,11 +78,11 @@ export default () => {
     let multiply: (val1: number, val2: number) => number;
     let echoString: (val: string) => string;
 
-    multiply = function(message: string): string {
+    echoString = function(message: string): string {
         return message;
     }
 
-    echoString = function(x: number, y: number): number {
+    multiply = function(x: number, y: number): number {
         return x * y;
     }
 
@@ -94,7 +96,7 @@ export default () => {
     //   original function that used `any`.
     // Finally, fix the values 
 
-    function echo(value: any): any {
+    function echo(value: any): any  {
         return value;
     }
 
@@ -147,12 +149,12 @@ export default () => {
     // Goals:
     // Add type annotations wherever possible
 
-    function computeScore(word) {
-        const letters = word.toUpperCase().split('');
+    function computeScore(word: string) {
+        const letters: string[] = word.toUpperCase().split('');
         return letters.reduce((accum, curr) => accum += getPointsFor(curr), 0);
     }
 
-    function getPointsFor(letter) {
+    function getPointsFor(letter: string) {
         const lettersAndPoints = [
         ['AEOIULNRST', 1],
         ['DG', 2],
@@ -173,4 +175,4 @@ export default () => {
     }
 
     console.log('[Part 2.8]', `zoo is worth ${computeScore('zoo')} points.`);
-}
+} 

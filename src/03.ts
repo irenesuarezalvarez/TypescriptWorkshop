@@ -1,4 +1,4 @@
-// Objectives: 
+/* // Objectives: 
 // Create classes with typed properties and methods
 // Add access modifiers to class members
 
@@ -131,4 +131,4 @@ export default () => {
   const student = new Student('Morty');
   console.log(Student.school);
   student.introduction();
-}
+} */

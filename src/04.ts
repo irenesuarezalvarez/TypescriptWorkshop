@@ -1,4 +1,4 @@
-// Objectives: 
+/* // Objectives: 
 // Demonstrate structural typing (duck typing)
 // Create an interface and implement it on a class
 // Differentiate type aliases from interfaces
@@ -85,3 +85,4 @@ export default () => {
 
     console.log(`User:`, user);
 }
+ */

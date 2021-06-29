@@ -7,8 +7,8 @@ export default () => {
     // Goals:
     // Fix errors
 
-    let pi = '3.14159';
-    let tau = pi * 2;
+    let pi: string = '3.14159';
+    let tau: number = +pi * 2;
 
     console.log(`${tau} is ${pi} times two.`);
 
@@ -16,7 +16,7 @@ export default () => {
     // Goals:
     // Fix type annotations
 
-    let pie: object;
+    let pie: string;
 
     pie = 'blueberry';
 
@@ -27,7 +27,7 @@ export default () => {
     // Goals:
     // Add a `boolean` type annotation
 
-    let isReady;      // inspect the default type by hovering over `isReady`
+    let isReady: boolean;      // inspect the default type by hovering over `isReady`
     isReady = true;   // should be ok
     isReady = 1;      // should error
     isReady = 'true'; // should error
@@ -39,16 +39,16 @@ export default () => {
     // Add type annotations (as explicit as possible)
     // Fix errors (if applicable)
 
-    const integer = 6;
-    const float = 6.66;
-    const hex = 0xf00d;
-    const binary = 0b1010011010;
-    const negZero = -0;
-    const actuallyNumber = NaN;
-    const largestNumber = Number.MAX_VALUE;
-    const mostBiglyNumber = Infinity;
+    const integer: number = 6;
+    const float: number = 6.66;
+    const hex: number = 0xf00d;
+    const binary: number = 0b1010011010;
+    const negZero: number = -0;
+    const actuallyNumber: number = NaN;
+    const largestNumber: number = Number.MAX_VALUE;
+    const mostBiglyNumber: number = Infinity;
 
-    const members: any[] = [
+    const members: number[] = [
         integer,
         float,
         hex,
@@ -59,7 +59,7 @@ export default () => {
         mostBiglyNumber
     ];
 
-    members[0] = '12345';
+    members[0] = 12345;
 
     console.log(members);
 
@@ -68,9 +68,9 @@ export default () => {
     // Add type annotations (as explicit as possible)
     // Fix errors (if applicable)
 
-    const sequence = Array.from(Array(10).keys());
-    const animals = ['pangolin', 'aardvark', 'echidna', 'binturong'];
-    const stringsAndNumbers = [1, 'one', 2, 'two', 3, 'three'];
+    const sequence: number[] = Array.from(Array(10).keys());
+    const animals: string []= ['pangolin', 'aardvark', 'echidna', 'binturong'];
+    const stringsAndNumbers: (number | string) [] = [1, 'one', 2, 'two', 3, 'three'];
 
     // extra credit
     const allMyArrays = [sequence, animals, stringsAndNumbers];
@@ -85,7 +85,7 @@ export default () => {
     // We want to represent an inventoryItem as a structure where
     // the first entry is the item name and the second is the quantity
 
-    const inventoryItem = ['fidget wibbit', 11];
+    const inventoryItem: [string, number] = ['fidget wibbit', 11];
 
     // later we destructure it
     const [name, qty] = inventoryItem;

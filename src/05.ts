@@ -1,4 +1,4 @@
-// Objectives: 
+/* // Objectives: 
 // Understand how TypeScript performs code flow analysis
 // Create and apply union and intersection types
 // Use basic type guards (narrowing types w/ typeof, instanceof, etc.)
@@ -204,3 +204,4 @@ export default () => {
 
     console.log('[Part 5.4]', `We've got a ${interrogateAnimal()} on our hands!`);
 }
+ */
